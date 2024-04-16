@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/techdoc.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>HTML And CSS Documentation</header>
+      <button id="nav-toggle">Menu</button>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li>
+          <a class="nav-link" href="#What_you_should_already_know"
+            >What you should already know</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="#HTML"
+            >HTML and CSS</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Client-Side vs. Server-side Development">Client-Side vs. Server-side Developmen</a></li>
+        <li><a class="nav-link" href="#Git">Learning About Git</a></li>
+        <li>
+          <a class="nav-link" href="#HTML Elements"
+            >CHAPTER 1: HTML Elements</a
+          >
+        </li>
+
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+            HTML5, is the latest version of HTML, structures web content using tags like header,nav, 
+              and footer. It introduces new features and improved semantics for creating web pages. CSS (Cascading Style Sheets)
+              styles HTML elements, controlling their visual presentation with properties like color, font, and lay-out. CSS can be applied within HTML tags into 
+              three different ways.
+              <ul>
+                <li>1. Internal: Tags placed within head or body, including CSS and JavaScript.
+                    <style>
+                        body {
+                            background-color: lightblue;
+                        }
+                        h1 {
+                            color: red;
+                        }
+                    </style>
+                    <body>
+                        <h1>This is an example heading</h1>
+                        <p>This is a paragraph.</p>
+                    </body>
+                </li>
+                <li>2. External: Tags stored in separate .html files, linked to the main document.
+                    <link rel="stylesheet" type="text/css" href="styles.css">
+                    <body>
+                        <h1>This is another example heading</h1>
+                        <p>This is another paragraph.</p>
+                    </body>
+                </li>
+                <li>3. Inline: Tags used directly within content, affecting specific elements.
+                    <body>
+                        <h1 style="color: blue;">This is a third example heading</h1>
+                        <p>This is yet another paragraph.</p>
+                    </body>
+                </li>
+            </ul>
+              Together HTML5 amd CSS form the backbone of Web Developmen, allowing us developers to create visually appealing and semanticall structured websites. 
+          </p>
+
+          <h1>HTML Tags and Descriptions</h1>
+          <p>
+            <table border="1">
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                  <td>&lt;acronym&gt;</td>
+                  <td>Not supported in HTML5. Use &lt;abbr&gt; instead. Defines an acronym</td>
+              </tr>
+                <tr>
+                    <td>&lt;acronym&gt;</td>
+                    <td>Not supported in HTML5. Use &lt;abbr&gt; instead. Defines an acronym</td>
+                </tr>
+                <tr>
+                    <td>&lt;abbr&gt;</td>
+                    <td>Defines an abbreviation or an acronym</td>
+                </tr>
+                <tr>
+                    <td>&lt;address&gt;</td>
+                    <td>Defines contact information for the author/owner of a document/article</td>
+                </tr>
+                <tr>
+                  <td>&lt;bdo&gt;</td>
+                  <td>Overrides the current text direction</td>
+              </tr>
+              <tr>
+                <td>&lt;b&gt;</td>
+                <td>Defines a bold text</td>
+            </tr>
+              <tr>
+                <td>&lt;mark&gt;</td>
+                <td>Defines a mark/highlighted text</td>
+            </tr>
+            <tr>
+              <td>&lt;template&gt;</td>
+              <td>Defines a container for content that should be hidden when the page loads</td>
+          </tr>
+          <tr>
+            <td>&lt;wbr&gt;</td>
+            <td>Defines a possible line-break</td>
+        </tr>
+
+            
+            </table>
+        </p>
+
+        </article>
+      </section>
+
+
+      <section class="main-section" id="Data_types">
+        <header>Data types</header>
+        <article>
+          <p>The latest ECMAScript standard defines seven data types:</p>
+          <ul>
+            <li>
+              <p>Six data types that are primitives:</p>
+              <ul>
+                <li>Boolean. true and false.</li>
+                <li>
+                  null. A special keyword denoting a null value. Because
+                  JavaScript is case-sensitive, null is not the same as Null,
+                  NULL, or any other variant.
+                </li>
+                <li>
+                  undefined. A top-level property whose value is undefined.
+                </li>
+                <li>Number. 42 or 3.14159.</li>
+                <li>String. "Howdy"</li>
+                <li>
+                  Symbol (new in ECMAScript 2015). A data type whose instances
+                  are unique and immutable.
+                </li>
+              </ul>
+            </li>
+
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              All the documentation in this page is taken from
+              <a
+                href="https://primusr.notion.site/Web-Application-Development-c213cf6dbd834f6f8bcc2d02746209db"
+                target="_blank"
+                >Web Application Development</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <script>
+      // Script for navigation toggle button
+      const navToggle = document.getElementById('nav-toggle');
+      const navbar = document.getElementById('navbar');
+      navToggle.addEventListener('click', function() {
+          navbar.classList.toggle('show');
+      });
+
+      // Script for smooth scrolling
+      document.querySelectorAll('a.nav-link').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+
+              const targetId = this.getAttribute('href').substring(1);
+              const targetSection = document.getElementById(targetId);
+
+              window.scrollTo({
+                  top: targetSection.offsetTop - navbar.offsetHeight,
+                  behavior: 'smooth'
+              });
+          });
+      });
+  </script>
+  </body>
+</html>
